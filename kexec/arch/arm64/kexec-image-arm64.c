@@ -50,7 +50,8 @@ int image_arm64_load(int argc, char **argv, const char *kernel_buf,
 				result = EFAILED;
 				goto exit;
 			}
-		}
+		} else if (default_initrd_fd != -1)
+			info->initrd_fd = default_initrd_fd;
 
 		if (arm64_opts.command_line) {
 			info->command_line = (char *)arm64_opts.command_line;
