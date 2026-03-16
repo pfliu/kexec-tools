@@ -14,6 +14,7 @@
 
 int bpf_image_probe(const char *file_buf, off_t buf_sz)
 {
+#if 0
 	struct pe_hdr *pe_hdr;
 	struct pe32plus_opt_hdr *opt_hdr;
 	struct section_header *sect_hdr;
@@ -31,6 +32,7 @@ int bpf_image_probe(const char *file_buf, off_t buf_sz)
 	section_nr = pe_hdr->sections;
 	opt_hdr = (struct pe32plus_opt_hdr *)(pe_part_buf + sizeof(struct pe_hdr));
 	sect_hdr = (struct section_header *)((char *)opt_hdr + pe_hdr->opt_hdr_size);
+#endif
 	return 0;
 }
 
@@ -73,5 +75,5 @@ exit:
 void bpf_image_usage(void)
 {
 	printf(
-"     A PE image.\n");
+"     A BPF parser image.\n");
 }
