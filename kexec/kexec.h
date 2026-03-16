@@ -363,8 +363,8 @@ extern int uki_image_load(int argc, char **argv, const char *buf, off_t len,
 		struct kexec_info *info);
 extern void uki_image_usage(void);
 
-extern int pe_image_probe(const char *file_buf, off_t buf_sz);
-extern int pe_image_load(int argc, char **argv, const char *buf, off_t len,
+extern int bpf_image_probe(const char *file_buf, off_t buf_sz);
+extern int bpf_image_load(int argc, char **argv, const char *buf, off_t len,
 		struct kexec_info *info);
-extern void pe_image_usage(void);
+extern void bpf_image_usage(void);
 #endif /* KEXEC_H */

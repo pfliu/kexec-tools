@@ -12,7 +12,7 @@
 
 
 
-int pe_image_probe(const char *file_buf, off_t buf_sz)
+int bpf_image_probe(const char *file_buf, off_t buf_sz)
 {
 	struct pe_hdr *pe_hdr;
 	struct pe32plus_opt_hdr *opt_hdr;
@@ -35,7 +35,7 @@ int pe_image_probe(const char *file_buf, off_t buf_sz)
 }
 
 // tmp for arm64
-int pe_image_load(int argc, char **argv, const char *buf, off_t len,
+int bpf_image_load(int argc, char **argv, const char *buf, off_t len,
 			struct kexec_info *info)
 {
 	int result = -1;
@@ -70,7 +70,7 @@ exit:
 	fprintf(stderr, "kexec: load failed.\n");
         return result;
 }
-void pe_image_usage(void)
+void bpf_image_usage(void)
 {
 	printf(
 "     A PE image.\n");
